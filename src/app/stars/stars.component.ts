@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-stars',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StarsComponent implements OnInit {
 
+  // @Input()
+  private rating: number;
+
+  private stars: boolean[];
+
   constructor() { }
 
   ngOnInit() {
+    this.stars = [false, true, false, true, true];
+    this.rating = 5;
   }
 
 }
