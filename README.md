@@ -1,10 +1,10 @@
-# Aution
+# Auction
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
 ## ng-auction
 ```
-angular 4.0 竞拍网站学习练手小项目
+angular 5.0 竞拍网站学习练手小项目
 ```
 
 ## Development server
