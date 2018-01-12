@@ -9,6 +9,15 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
+import { ProductDtailComponent } from './product-dtail/product-dtail.component';
+import { HomeComponent } from './home/home.component';
+import { Routes } from '@angular/router/src/config';
+import { RouterModule } from '@angular/router';
+
+const routeConfig: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'product/:prodTitle', component: ProductDtailComponent},
+];
 
 
 @NgModule({
@@ -19,10 +28,13 @@ import { StarsComponent } from './stars/stars.component';
     SearchComponent,
     CarouselComponent,
     ProductComponent,
-    StarsComponent
+    StarsComponent,
+    ProductDtailComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routeConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

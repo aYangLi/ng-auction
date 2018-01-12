@@ -8,15 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 export class StarsComponent implements OnInit {
 
   @Input()
-  rating: number;
+  private rating: number;
 
   private stars: boolean[];
 
   constructor() { }
 
   ngOnInit() {
-    this.stars = [false, true, false, true, true];
-    // this.rating = 5;
+    this.stars = [];
+    for (let i = 1; i <= 5; i ++) {
+      this.stars.push(i > this.rating);
+    }
   }
 
 }
