@@ -13,10 +13,11 @@ import { ProductDtailComponent } from './product-dtail/product-dtail.component';
 import { HomeComponent } from './home/home.component';
 import { Routes } from '@angular/router/src/config';
 import { RouterModule } from '@angular/router';
+import { ProductService } from './shared/product.service';
 
 const routeConfig: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'product/:prodTitle', component: ProductDtailComponent},
+  {path: 'product/:productId', component: ProductDtailComponent},
 ];
 
 
@@ -36,7 +37,7 @@ const routeConfig: Routes = [
     BrowserModule,
     RouterModule.forRoot(routeConfig),
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
