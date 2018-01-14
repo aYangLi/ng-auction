@@ -11,6 +11,8 @@ export class SearchComponent implements OnInit {
 
   formModel: FormGroup;
 
+  categories: string[];
+
   constructor(
     private productService: ProductService
   ) {
@@ -23,6 +25,7 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.categories = this.productService.getAllCategorires();
   }
 
   positiveNumberValidator(control: FormControl): any {
@@ -38,9 +41,9 @@ export class SearchComponent implements OnInit {
   }
 
   onSearch() {
-    // if(this.formModel.valid) {
-    //   this.productService.searchEvent.emit(this.formModel.value)
-    // }
+    if (this.formModel.valid) {
+      this.productService.searchEvent.emit(this.formModel.value);
+    }
   }
 
 }

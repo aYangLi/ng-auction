@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class ProductService {
+
+  searchEvent: EventEmitter<ProductSearchParams> = new EventEmitter();
 
   private products: Product[] = [
     new Product(1, '第1个商品', 1.99, 3.5 , '这事第1个商品，', ['电子产品', '硬件设备']),
@@ -21,6 +23,10 @@ export class ProductService {
   ];
 
   constructor() { }
+
+  getAllCategorires (): string[] {
+    return ['电子产品', '硬件设备', '图书'];
+  }
   getProducts(): Product[] {
     return this.products;
   }
@@ -57,4 +63,12 @@ export class Comment {
   ) {
 
   }
+}
+
+export class ProductSearchParams {
+  constructor(
+    public title: string,
+    public price: number,
+    public category: string
+  ){}
 }
